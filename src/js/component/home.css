@@ -1,0 +1,34 @@
+.container{
+    background-color: black;
+    border-radius: 10px;
+    width: 200px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.traffic-top{
+    background-color: black;
+    width: 25px;
+    height: 100px;
+}
+.light{
+    opacity: 50%;
+    border-radius: 100%;
+    width: 100%;
+    height: 33%;
+    margin-bottom: 20px;
+}
+.red{
+    background-color: red;
+    margin-top: 20px;
+}
+.yellow{
+    background-color: yellow;
+}
+.green{
+    background-color: green;
+}
+.active{
+    opacity: 100% ;
+}

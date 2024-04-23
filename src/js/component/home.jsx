@@ -1,24 +1,35 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
+import './home.css';
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
-//create your first component
 const Home = () => {
+	const [currentLight, setCurrentLight] = useState('red');
+	const setRed = () => {
+		setCurrentLight('red');
+		setTimeout(() => {
+			setGreen();
+		},10000);
+	}
+	const setYellow = () => {
+		setCurrentLight('yellow');
+		setTimeout(() => {
+			setRed();
+		},2000);
+	}
+	const setGreen = () => {
+		setCurrentLight('green');
+		setTimeout(() => {
+			setYellow();
+		},8000);
+	}
+  useEffect(() => {setRed()},[])
 	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div>
+			<div className="traffic-top m-auto"></div>
+			<div className="container">
+				<div className={'red light ' + (currentLight === 'red' ? 'active' : '')}></div>
+				<div className={'yellow light ' + (currentLight === 'yellow' ? 'active' : '')}></div>
+				<div className={'green light ' + (currentLight === 'green' ? 'active' : '')}></div>
+			</div>
 		</div>
 	);
 };
